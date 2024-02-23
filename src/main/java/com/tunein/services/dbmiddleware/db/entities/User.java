@@ -4,7 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
 
 import java.sql.Timestamp;
 
@@ -12,8 +11,7 @@ import java.sql.Timestamp;
 @Table(name="user", schema = "tunein")
 public class User {
     @jakarta.persistence.Id
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     private String name;
     private int weight;
@@ -29,7 +27,17 @@ public class User {
     public User() {
     }
 
-    public User(String name, String weight, String height, String age, String sex, String race, String ethnicity, String educationLevel, String employmentStatus, String createdAt) {
+    public User(String name, int weight, int height, int age, boolean sex, String race, String ethnicity, String education_level, String employment_status, Timestamp created_at) {
+        this.name = name;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+        this.sex = sex;
+        this.race = race;
+        this.ethnicity = ethnicity;
+        this.education_level = education_level;
+        this.employment_status = employment_status;
+        this.created_at = created_at;
     }
 
     public int getId() {

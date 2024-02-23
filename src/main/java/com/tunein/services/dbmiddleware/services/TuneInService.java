@@ -5,6 +5,7 @@ import com.tunein.services.dbmiddleware.db.repositories.TuneInRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.Optional;
 
 @Service
@@ -26,8 +27,8 @@ public class TuneInService {
         }
     }
 
-    public User saveUser(String username, String weight, String height, String age, String sex,
-                         String race, String ethnicity, String educationLevel, String employmentStatus, String createdAt) {
+    public User saveUser(String username, int weight, int height, int age, boolean sex,
+                         String race, String ethnicity, String educationLevel, String employmentStatus, Timestamp createdAt) {
         return tuneInRepository.save(new User(username, weight, height, age, sex, race, ethnicity, educationLevel, employmentStatus, createdAt));
     }
 }

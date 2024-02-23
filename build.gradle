@@ -24,6 +24,7 @@ dependencies {
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: spring_version
 	implementation group: 'com.mysql', name: 'mysql-connector-j', version: mysql_version
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation "org.jboss.logging:jboss-logging:3.5.3.Final"
 //	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
